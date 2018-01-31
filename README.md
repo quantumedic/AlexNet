@@ -1,2 +1,26 @@
 # AlexNet
-AlexNet network model
+
+- Input Image: 227 x 227 x 3
+- Conv1: kernal_size=11 x 11, stride=4, output_chanel=96
+- ReLu1
+- MaxPool1: kernal_size=3, stride=2
+- Normal1: local_size=5
+- Conv2: kernal_size=5 x 5, stride=2, output_chanel=256
+- ReLu2
+- MaxPool2: kernal_size=3, stride=2
+- Normal2: local_size=5
+- Conv3: kernal_size=3 x 3, stride=1, output_chanel=384
+- ReLu3
+- Conv4: kernal_size=3 x 3, stride=1, output_chanel=384
+- ReLu4
+- Conv5: kernal_size=3 x 3, stride=1, output_chanel=384
+- ReLu5
+- MaxPool3: kernal_size=3, stride=2
+- Fc: 4096 x 1
+- ReLu6
+- Dropout
+- Fc: 4096 x 1
+- Dropout
+- ReLu7
+- Dropout
+- Fc: 1000 x 1
