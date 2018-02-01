@@ -1,6 +1,6 @@
 import tensorflow as tf
 import math
-import layer
+from .. import layer
 
 def alexNet(x, w, h):
 	keep_prob = tf.placeholder(tf.float32)
