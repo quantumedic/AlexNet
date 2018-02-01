@@ -46,7 +46,7 @@ def alexNet(x, w, h):
 	with tf.name_scope('pool5'):
 		net = layer.max_pooling(net)
 
-	with tf.name_scope('layer6'):
+	with tf.name_scope('fc1'):
 		_w = math.floor(w / 2 / 2 / 2 / 2 / 2)
 		_h = math.floor(h / 2 / 2 / 2 / 2 / 2)
 		net = tf.reshaped(x, [-1, _w * _h * 512])
@@ -54,7 +54,7 @@ def alexNet(x, w, h):
 		net = layer.fc(net, size=_w * _h * 512, num_output=4096)
 		net = layer.dropout(net, keep_prob)
 
-	with tf.name_scope('layer7'):
+	with tf.name_scope('fc2'):
 		net = layer.fc(net, size=4096, num_output=4096)
 		net = layer.dropout(net, keep_prob)
 
